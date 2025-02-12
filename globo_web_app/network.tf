@@ -16,7 +16,7 @@ data "aws_availability_zones" "available" {}
 # NETWORKING #
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
-  version = "3.19.0"
+  version = "5.19.0"
 
   cidr           = var.vpc_cidr_block[terraform.workspace]
   azs            = slice(data.aws_availability_zones.available.names, 0, (var.vpc_subnet_count[terraform.workspace]))
